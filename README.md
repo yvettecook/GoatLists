@@ -23,3 +23,5 @@ Building on basic python learning, and getting started with Django. Following th
 Loving the humour of the Python community!
 
 'Functional Tests' track the User Story
+
+"Django's main job is to decide what to do when a user asks for a particular URL on the site"

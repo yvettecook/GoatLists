@@ -1,31 +1,41 @@
 from selenium import webdriver
+import unittest
 
-browser = webdriver.Firefox()
-browser.get('http://localhost:8000')
 
-# Even goats have things to do, so they use GoatList
-# Tessa the Testing goat goes to check out the homepage
-assert 'Django' in browser.title
+class NewVisitorTest(unittest.TestCase):
 
-# On the page there is a title and a header.
-assert 'Goat-Do' in browser.title
+    def setUp(self):
+        self.browser = webdriver.Firefox()
 
-# She is invited to enter a to-do list item.
+    def tearDown(self):
+        self.browser.quit()
 
-# She types 'Climb up a Tree'.
+    def test_can_start_a_list_and_retrieve_it_later(self):
+        # Even goats have things to do, so they use GoatList
+        # Tessa the Testing goat goes to check out the homepage
+        self.browser.get('http://localhost:8000')
 
-# When she hits enter, the page updates, and now the page lists
-# '1: Climb up a Tree' as an item on the to-do list.
+        # On the page there is a title and a header.
+        self.assertIn('Goat-Do', self.browser.title)
+        self.fail('Test failing')
 
-# There is still a textbox inviting her to enter another to-do item
-# She enters 'Don't fall off tree'.
+        # She is invited to enter a to-do list item.
 
-# The page updates again, and now shows both items on her list.
+        # She types 'Climb up a Tree'.
 
-# She wants to open her to-dos on another computer, and notices that the site
-# has generated a unique url for her list, and there is text on the page
-# explaining this.
+        # When she hits enter, the page updates, and now the page lists
+        # '1: Climb up a Tree' as an item on the to-do list.
 
-# She visits the page in another browser window, and wow! Her todo list is there!
+        # There is still a textbox inviting her to enter another to-do item
+        # She enters 'Don't fall off tree'.
 
-browser.quit
+        # The page updates again, and now shows both items on her list.
+
+        # She wants to open her to-dos on another computer, and notices that the site
+        # has generated a unique url for her list, and there is text on the page
+        # explaining this.
+
+        # She visits the page in another browser window, and wow! Her todo list is there!
+
+if __name__ == '__main__':
+    unittest.main(warnings='ignore')

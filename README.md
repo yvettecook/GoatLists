@@ -1,4 +1,6 @@
-## GoatList: A To-Do List written in Python
+## GoatList
+A To-Do List written in Python, launched on Django, and following with test-driven development
+
 
 ### Context
 
@@ -15,3 +17,9 @@ Building on basic python learning, and getting started with Django. Following th
 * Django (v1.7)
 * Selenium
 * SQLite
+
+### Learnings
+
+Loving the humour of the Python community!
+
+'Functional Tests' track the User Story

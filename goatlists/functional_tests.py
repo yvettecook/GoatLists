@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import unittest
 
 
@@ -18,7 +19,10 @@ class NewVisitorTest(unittest.TestCase):
 
         # On the page there is a title and a header.
         self.assertIn('Goat-Do', self.browser.title)
-        # self.fail('Test failing')
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('Goat-Do', header_text)
+
+        self.fail('Finish the test')
 
         # She is invited to enter a to-do list item.
 

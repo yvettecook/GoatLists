@@ -22,10 +22,14 @@ class NewVisitorTest(unittest.TestCase):
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Your Goat-Dos', header_text)
 
-        self.fail('Finish the test')
-
         # She is invited to enter a to-do list item.
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertEqual(
+            inputbox.get_attribute('placeholder'),
+            'Enter a goat-do item'
+            )
 
+        self.fail('Finish the test')
         # She types 'Climb up a Tree'.
 
         # When she hits enter, the page updates, and now the page lists

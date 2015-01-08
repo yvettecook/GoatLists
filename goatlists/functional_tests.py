@@ -20,7 +20,7 @@ class NewVisitorTest(unittest.TestCase):
         # On the page there is a title and a header.
         self.assertIn('Goat-Do', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Goat-Do', header_text)
+        self.assertIn('Your Goat-Dos', header_text)
 
         self.fail('Finish the test')
 

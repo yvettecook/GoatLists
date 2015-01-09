@@ -18,6 +18,10 @@ Building on basic python learning, and getting started with Django. Following th
 * Selenium
 * SQLite
 
+### Progress
+
+09/01: Finished Chapter 4
+
 ### Learnings
 
 Loving the humour of the Python community!

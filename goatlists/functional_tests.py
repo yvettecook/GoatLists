@@ -29,12 +29,19 @@ class NewVisitorTest(unittest.TestCase):
             'Enter a goat-do item'
             )
 
-        self.fail('Finish the test')
         # She types 'Climb up a Tree'.
+        inputbox.send_keys('Climb up a Tree')
 
         # When she hits enter, the page updates, and now the page lists
         # '1: Climb up a Tree' as an item on the to-do list.
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertTrue(
+            any(row.text == '1: Climb Tree' for row in rows),
+            "New goat-do item did not appear in table"
+        )
 
+        self.fail('Finish the test')
         # There is still a textbox inviting her to enter another to-do item
         # She enters 'Don't fall off tree'.
 
